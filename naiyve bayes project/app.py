@@ -9,13 +9,10 @@ import os
 
 @st.cache_resource
 def load_artifacts():
-    base_dir = os.path.dirname(__file__)
-
-    model = joblib.load(os.path.join(base_dir, "naive_bayes_model.pkl"))
-    imputer = joblib.load(os.path.join(base_dir, "imputer.pkl"))
-    sex_encoder = joblib.load(os.path.join(base_dir, "sex_encoder.pkl"))
-    embarked_encoder = joblib.load(os.path.join(base_dir, "embarked_encoder.pkl"))
-
+    model = joblib.load("naiyve bayes/naive_bayes_model.pkl")
+    imputer = joblib.load("naiyve bayes/imputer.pkl")
+    sex_encoder = joblib.load("naiyve bayes/sex_encoder.pkl")
+    embarked_encoder = joblib.load("naiyve bayes/embarked_encoder.pkl")
     return model, imputer, sex_encoder, embarked_encoder
 
 model, imputer, sex_encoder, embarked_encoder = load_artifacts()
